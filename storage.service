@@ -1,0 +1,11 @@
+[Unit]
+Description=tunnel client
+After=network-online.target
+
+[Service]
+PIDFile=/var/run/storage.pid
+ExecStart=/usr/local/sbin/storage -config /etc/storage/storage.conf
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
